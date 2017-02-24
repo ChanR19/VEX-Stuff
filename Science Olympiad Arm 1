@@ -21,7 +21,7 @@ task main(){
 
 		if(vexRT[Btn8U]){ //Possible claw movement
 			motor[port5] = 60;
-		}else if(Btn8L){
+		}else if(vexRT[Btn8L]){
 			motor[port5] = -60;
 		}else{
 			motor[port5] = 0;
