@@ -1,30 +1,30 @@
 task main(){
 	while(true){
-		motor[port2] = vexRT[Ch4]; //Arm motor lower
+		motor[port2] = vexRT[Ch3]; //Arm motor lower
 		motor[port3] = vexRT[Ch2]; //Arm motor middle
 
 		if(vexRT[Btn8R]){ //Arm motor higher
-			motor[port5] = 127;
+			motor[port4] = 60;
 		}else if(vexRT[Btn8D]){
-		 	motor[port5] = -127;
+		 	motor[port4] = -60;
 		}else{
-			motor[port5] = 0;
+			motor[port4] = 0;
 		}
 
 		if(vexRT[Btn5U]){ //Horizontal Movement
-			motor[port1] = 127;    
+			motor[port1] = 127;
 		}else if(vexRT[Btn6U]){
-			motor[port1] = -127;  
+			motor[port1] = -127;
 		}else{
-			motor[port1] = 0;      
+			motor[port1] = 0;
 		}
-		
+
 		if(vexRT[Btn8U]){ //Possible claw movement
-			motor[port4] = 127;
+			motor[port5] = 60;
 		}else if(Btn8L){
-			motor[port4] = -127;
+			motor[port5] = -60;
 		}else{
-			motor[port4] = 0;
+			motor[port5] = 0;
 		}
 	}
 }
