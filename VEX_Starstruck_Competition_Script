@@ -1,0 +1,46 @@
+#pragma platform(VEX)
+
+#pragma competitionControl(Competition)
+
+#include "Vex_Competition_Includes.c"   //Main competition background code...do not modify!
+
+
+void pre_auton()
+{
+
+}
+
+
+task autonomous()
+{
+
+}
+
+
+task usercontrol()
+{
+	while(true){
+		motor[port1] = vexRT[Ch3];
+		motor[port2] = vexRT[Ch2];
+		
+		if(vexRT[Btn8U]){
+			motor[port4] = 5;
+		}
+
+		if(vexRT[Btn5U]){
+			motor[port2] = 127;
+			motor[port3] = 127;
+		}else if(vexRT[Btn5D]){
+			motor[port2] = -127;
+			motor[port3] = -127;
+		}else if(vexRT[Btn6U]){
+			motor[port4] = 127;
+		}else if(vexRT[Btn6D]){
+			motor[port4] = -127;
+		}else{
+			motor[port2] = 0;
+			motor[port3] = 0;
+			motor[port4] = 0;
+		}
+	}
+}
