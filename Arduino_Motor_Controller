@@ -1,0 +1,19 @@
+//Apparently the VEX Motor Controllers use 1000 as counter clockwise, 1500 as stop, and 2000 as clockwise instead of 0-180 that we were trying to use
+
+#include <Servo.h>
+
+Servo servo1;
+
+void setup() {
+  // put your setup code here, to run once:
+  servo1.attach(9);
+}
+
+void loop() {
+  servo1.write(1000); //Counter clockwise
+  delay(5000); //run for 5 seconds
+  servo1.write(1500); //Stop
+  delay(2000); // wait 3 seconds
+  servo1.write(2000); //Clockwise
+  delay(5000); //run for 5 seconds
+}
